@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "mlops_env_sample"
+version = "0.1.0"
+description = "An integrated environment used from PoC to production"
+authors = ["ababa831"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+gevent = "^1.4"
+gunicorn = "^19.9"
+pandas = "^0.25.2"
+matplotlib = "^3.1"
+numpy = "^1.17"
+scikit-learn = "^0.21.3"
+seaborn = "^0.9.0"
+pytest = "^5.2"
+scipy = "^1.4.1"
+sagemaker = "^1.50.7"
+awscli = "^1.17.6"
+flask = "^1.1.1"
+
+[tool.poetry.dev-dependencies]
+jupyter = "^1.0"
+jupyterlab = "^1.1"
+trains = "^0.12.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+    # 基本となるML統合環境（以下は，PoC（分析・検証）で利用するための設定）
+    # 構築されたコンテナイメージは本番まで利用
+    ml_base:
+        container_name: ml_base
+        build: 
+            context: ./env_settings
+            dockerfile: ./dockerfiles/Dockerfile
+            args: 
+                - dependencies=./dependencies/cpu
+                - csv=sample_userdic.csv
+        user: root
+        # 本リポジトリはsagemaker_mlops_demoのSubmoduleとして利用することを想定しているため，
+        # 一つ上の階層をShareするように設定
+        volumes: 
+            - ../:/home/workspace
+        ports:
+            - "8888:8888"
+        command: poetry run jupyter lab --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token='sha1:32bdbb42ed45:5e0b1d1681e9eaf60ee8bd158921a90ac30705a3'
