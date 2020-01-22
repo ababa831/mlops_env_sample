@@ -14,7 +14,7 @@ services:
         # 本リポジトリはsagemaker_mlops_demoのSubmoduleとして利用することを想定しているため，
         # 一つ上の階層をShareするように設定
         volumes: 
-            - ./:/opt/program/workspace
+            - ../:/opt/program/workspace
         working_dir: /opt/program/workspace
         ports:
             - "8888:8888"
