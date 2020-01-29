@@ -18,6 +18,8 @@ scipy = "^1.4.1"
 sagemaker = "^1.50.7"
 awscli = "^1.17.6"
 flask = "^1.1.1"
+toml = "^0.10.0"
+gitpython = "^3.0.5"
 
 [tool.poetry.dev-dependencies]
 jupyter = "^1.0"
