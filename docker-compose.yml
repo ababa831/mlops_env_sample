@@ -20,4 +20,4 @@ services:
         working_dir: /opt/program/workspace
         ports:
             - "8888:8888"
-        command: ./entrypoint.sh
+        command: /opt/program/entrypoint.sh

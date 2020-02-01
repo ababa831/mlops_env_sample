@@ -85,3 +85,4 @@ ENV PYTHONHASHSEED 1
 # エントリポイントのコピー
 ARG entrypoint='entrypoint.sh'
 COPY ${entrypoint} /opt/program/entrypoint.sh
+RUN chmod +x /opt/program/entrypoint.sh
