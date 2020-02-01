@@ -4,12 +4,14 @@ services:
     # 構築されたコンテナイメージは本番まで利用
     ml_base:
         container_name: ml_base
+        env_file: ./env_settings/.env
         build: 
             context: ./env_settings
             dockerfile: ./dockerfiles/Dockerfile
             args: 
                 - dependencies=./dependencies/cpu
                 - csv=sample_userdic.csv
+                - entrypoint=entrypoint.sh
         user: root
         # 本リポジトリはsagemaker_mlops_demoのSubmoduleとして利用することを想定しているため，
         # 一つ上の階層をShareするように設定
@@ -18,4 +20,4 @@ services:
         working_dir: /opt/program/workspace
         ports:
             - "8888:8888"
-        command: poetry run jupyter lab --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token='sha1:32bdbb42ed45:5e0b1d1681e9eaf60ee8bd158921a90ac30705a3'
+        command: ./entrypoint.sh
