@@ -81,3 +81,7 @@ ENV PYTHONUNBUFFERED=TRUE
 ENV PYTHONDONTWRITEBYTECODE=TRUE
 ENV PATH="/opt/program:${PATH}"
 ENV PYTHONHASHSEED 1
+
+# エントリポイントのコピー
+ARG entrypoint='entrypoint.sh'
+COPY ${entrypoint} /opt/program/entrypoint.sh
