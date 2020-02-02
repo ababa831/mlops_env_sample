@@ -11,6 +11,9 @@ MLOps等で利用するML環境サンプル
 3. `http://localhost:8888` にアクセスすると，jupyterlab認証画面が出る
    - 今回はサンプル用にパスワードを`aaaa`と設定．この文字列を入力して実行すればログインできる．
 
+### 終了
+
+`docker-compose -f docker-compose.yml down`
 
 ### AWS CLI 環境設定
 
