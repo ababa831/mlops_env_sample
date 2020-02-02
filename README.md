@@ -1,11 +1,20 @@
 # mlops_env_sample
 MLOps等で利用するML環境サンプル
 
-## 準備
+## 使い方
+
+### ビルド&起動
+
+1. ビルド `$ docker-compose -f docker-compose.yml build`
+   - キャッシュを使わない場合は `--no-cache`オプションを付加
+2. 起動 `$ docker-compose -f docker-compose.yml up -d`
+3. `http://localhost:8888` にアクセスすると，jupyterlab認証画面が出る
+   - 今回はサンプル用にパスワードを`aaaa`と設定．この文字列を入力して実行すればログインできる．
+
 
 ### AWS CLI 環境設定
 
-`mlops_env_sample`ディレクトリ配下に`/env_settings/.env`を作成し，以下の通り環境変数を設定する
+`mlops_env_sample`ディレクトリ配下に`/env_settings/.env`を作成し，以下の通り環境変数を設定する．
 
 ```.env
 # develop環境
