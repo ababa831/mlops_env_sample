@@ -5,10 +5,7 @@ image_name=mlops_env_sample_ml_base
 
 
 # [docker-compose buildする．]
-if ! docker images | grep -q ${image_name}
-then
-    docker-compose -f docker-compose.yml build
-fi
+docker-compose -f docker-compose.yml build --no-cache
 
 
 # [引数の設定]
